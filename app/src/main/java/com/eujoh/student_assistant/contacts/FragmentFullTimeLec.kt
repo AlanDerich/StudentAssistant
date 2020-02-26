@@ -1,9 +1,13 @@
 package com.eujoh.student_assistant.contacts
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -41,6 +45,18 @@ class FragmentFullTimeLec : Fragment(), LecStudeAdapter.OnItemClickListener{
     }
 
     override fun onItemClick(item: LecStudeItem, position: Int) {
+        val dialog = AlertDialog.Builder(context!!)
+        val dialogView = layoutInflater.inflate(R.layout.lec_stude_dialog, null)
+        val ContactName = dialogView.findViewById<TextView>(R.id.cont_name_lec_stude_dialog)
+        val Phone1 = dialogView.findViewById<TextView>(R.id.phone1_lec_stude_dialog)
+        val Phone2 = dialogView.findViewById<TextView>(R.id.phone2_lec_stude_dialog)
+        val Call1 = dialogView.findViewById<ImageView>(R.id.line1_lec_stude_call)
+        val Call2 = dialogView.findViewById<ImageView>(R.id.line2_lec_stude_call)
+        val Sms1 = dialogView.findViewById<ImageView>(R.id.line1_lec_stude_sms)
+        val Sms2 = dialogView.findViewById<ImageView>(R.id.line2_lec_stude_sms)
+        dialog.setView(dialogView)
+        dialog.setCancelable(false)
+        dialog.show()
 
     }
 }

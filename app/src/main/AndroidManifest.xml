@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eujoh.student_assistant">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/uoe_app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".welcome.WelcomeSliderActivity"></activity>
+        <activity android:name=".contacts.ContactsActivity" />
+        <activity
+            android:name=".web.SchoolWebActivity"
+            android:label="UNIVERSITY OF ELDORET WEBSITE"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity
+            android:name=".web.PortalWebActivity"
+            android:label="STUDENT PORTAL"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity
+            android:name=".FAQS.FAQSActivity"
+            android:label="FAQS"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity
+            android:name=".curriculum.CurriculumActivity"
+            android:label="CURRICULUM"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity
+            android:name=".my_profile.MyProfileActivity"
+            android:label="MY PROFILE"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity
+            android:name=".announcements.AnnouncementsActivity"
+            android:label="ANNOUNCEMENTS"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity
+            android:name=".lost_and_found.LostFoundActivity"
+            android:label="LOST AND FOUND"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity
+            android:name=".welcome.SplashActivity"
+            android:theme="@style/AppTheme.NOActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NavActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NOActionBar" />
+        <activity android:name=".ImageActivity" />
+        <activity
+            android:name=".contacts.EmergencyContactsActivity"
+            android:label="EMERGENCY CONTACTS"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".contacts.ContactsActivity" />
+        </activity>
+        <activity
+            android:name=".contacts.StudentsLeadersActivity"
+            android:label="STUDENT LEADERS"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".contacts.ContactsActivity" />
+        </activity>
+        <activity
+            android:name=".contacts.LecturersContActivity"
+            android:label="LECTURES&apos; CONTACTS"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".contacts.ContactsActivity" />
+        </activity>
+    </application>
+
+</manifest>

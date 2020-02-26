@@ -38,8 +38,6 @@ class LecStudeAdapter(var data: ArrayList<LecStudeItem>, var clickListener: OnIt
         fun initialize(item: LecStudeItem, action: OnItemClickListener){
             Name.text = item.Name
             PhoneBoth.text = item.PhoneBoth
-            Line1.text  = item.Line1
-            Line2.text = item.Line2
             image.setImageResource(item.image)
 
 

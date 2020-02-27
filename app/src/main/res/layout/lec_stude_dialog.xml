@@ -1,85 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="350dp"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream_chep"
     android:layout_gravity="center">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/cont_image_lec_stude_dialog"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/contact_icon_one" />
+
     <LinearLayout
-        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
-        android:id="@+id/linear_layout_contname_lecstudedialog"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/colorPrimaryDark">
+        android:layout_below="@id/cont_image_lec_stude_dialog"
+        android:orientation="vertical">
+
         <TextView
+            android:id="@+id/cont_name_lec_stude_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cont_name_lec_stude_dialog"
             android:layout_gravity="center_horizontal"
-            android:text="Contact Name"
-            android:textColor="#fff"
-            android:textSize="24sp"
             android:layout_marginTop="30dp"
-            android:textStyle="bold"/>
+            android:text="Contact Name"
+            android:textColor="@color/brown_chep"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="3dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Line1:"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Line2:"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
+                android:orientation="vertical"
                 android:padding="3dp">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/phone1_lec_stude_dialog"
-                    android:text="Phone Number1"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="italic"/>
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/phone2_lec_stude_dialog"
-                    android:text="Phone Number2"
-                    android:textColor="#fff"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="Phone Number1"
+                    android:textColor="@color/brown_chep"
                     android:textSize="22sp"
-                    android:textStyle="italic"/>
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/phone2_lec_stude_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="Phone Number2"
+                    android:textColor="@color/brown_chep"
+                    android:textSize="22sp"
+                    android:textStyle="italic" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
+                android:orientation="vertical"
                 android:padding="3dp">
 
                 <ImageView
                     android:id="@+id/line1_lec_stude_call"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
                     android:clickable="true"
                     android:src="@drawable/ic_call1" />
 
@@ -87,21 +90,24 @@
                     android:id="@+id/line2_lec_stude_call"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:src="@drawable/ic_call1" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
                 android:padding="3dp">
 
                 <ImageView
                     android:id="@+id/line1_lec_stude_sms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
                     android:clickable="true"
                     android:src="@drawable/ic_message1" />
 
@@ -109,18 +115,36 @@
                     android:id="@+id/line2_lec_stude_sms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:src="@drawable/ic_message1" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/line1_lec_stude_copy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_copy" />
+
+                <ImageView
+                    android:id="@+id/line2_lec_stude_copy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_copy" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:padding="10dp"
-        android:src="@drawable/contact_icon_one" />
 
 </RelativeLayout>

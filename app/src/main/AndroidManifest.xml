@@ -14,7 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".welcome.WelcomeSliderActivity"></activity>
-        <activity android:name=".contacts.ContactsActivity" />
+        <activity android:name=".contacts.ContactsActivity"
+            android:label="IMPORTANT CONTACTS"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
         <activity
             android:name=".web.SchoolWebActivity"
             android:label="UNIVERSITY OF ELDORET WEBSITE"

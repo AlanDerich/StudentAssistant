@@ -12,20 +12,25 @@ import com.eujoh.student_assistant.contacts.ContactsActivity
 import com.eujoh.student_assistant.curriculum.CurriculumActivity
 import com.eujoh.student_assistant.home.HomeFragment
 import com.eujoh.student_assistant.lost_and_found.LostFoundActivity
-import com.eujoh.student_assistant.my_profile.MyProfileActivity
+import com.eujoh.student_assistant.my_profile.EditProfileActivity
 import com.eujoh.student_assistant.web.PortalWebActivity
 import com.eujoh.student_assistant.web.SchoolWebActivity
+import com.eujoh.student_assistant.welcome.LogInActivity
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_nav.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 class NavActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var homeFragment: HomeFragment
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nav)
+
+        mAuth = FirebaseAuth.getInstance()
 
         setSupportActionBar(toolBar)
         val actionBar = supportActionBar
@@ -86,7 +91,7 @@ class NavActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
                 return true
             }
             R.id.my_profile -> {
-                this.startActivity(Intent(this, MyProfileActivity::class.java))
+                this.startActivity(Intent(this, EditProfileActivity::class.java))
                 return true
             }
             R.id.portal -> {
@@ -103,6 +108,12 @@ class NavActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
             }
             R.id.developer -> {
 
+            }
+            R.id.log_out -> {
+                mAuth.signOut()
+                this.startActivity(Intent(this,LogInActivity::class.java))
+                finish()
+                return true
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START)

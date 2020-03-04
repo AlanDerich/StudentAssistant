@@ -13,8 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".welcome.WelcomeSliderActivity"></activity>
-        <activity android:name=".contacts.ContactsActivity"
+        <activity android:name=".my_profile.ProfileActivity"></activity>
+        <activity
+            android:name=".welcome.LogInActivity"
+            android:theme="@style/AppTheme.NOActionBar" />
+        <activity android:name=".welcome.PasswordReset" />
+        <activity
+            android:name=".welcome.RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".welcome.WelcomeSliderActivity" />
+        <activity
+            android:name=".contacts.ContactsActivity"
             android:label="IMPORTANT CONTACTS"
             android:launchMode="singleTop">
             <meta-data
@@ -54,7 +63,7 @@
                 android:value=".NavActivity" />
         </activity>
         <activity
-            android:name=".my_profile.MyProfileActivity"
+            android:name=".my_profile.EditProfileActivity"
             android:label="MY PROFILE"
             android:launchMode="singleTop">
             <meta-data

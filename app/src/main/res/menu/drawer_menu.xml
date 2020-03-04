@@ -65,5 +65,11 @@
                 android:icon="@drawable/ic_action_developer"/>
         </menu>
     </item>
+    <group android:checkableBehavior="single">
+
+            <item android:id="@+id/log_out"
+                android:title="LOG OUT"
+                android:icon="@drawable/ic_logout"/>
+        </group>
 
 </menu>

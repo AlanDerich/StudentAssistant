@@ -15,7 +15,7 @@ import com.eujoh.student_assistant.announcements.AnnouncementsActivity
 import com.eujoh.student_assistant.contacts.ContactsActivity
 import com.eujoh.student_assistant.curriculum.CurriculumActivity
 import com.eujoh.student_assistant.lost_and_found.LostFoundActivity
-import com.eujoh.student_assistant.my_profile.MyProfileActivity
+import com.eujoh.student_assistant.my_profile.ProfileActivity
 import com.eujoh.student_assistant.web.PortalWebActivity
 import com.eujoh.student_assistant.web.SchoolWebActivity
 
@@ -80,7 +80,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnItemClickListener {
             startActivity(intent)
         }
         else if (position == 6){
-            val intent = Intent(context, MyProfileActivity::class.java)
+            val intent = Intent(context, ProfileActivity::class.java)
             startActivity(intent)
         }else {
             val intent = Intent(context, FAQSActivity::class.java)

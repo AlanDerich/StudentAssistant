@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
 
         val bar = findViewById<ProgressBar>(R.id.splash_progressBar)
 
-        Handler().postDelayed({startActivity(Intent(this, NavActivity::class.java))
+        Handler().postDelayed({startActivity(Intent(this, LogInActivity::class.java))
         }, 2000) //7000 = 5 seconds
     }
 }

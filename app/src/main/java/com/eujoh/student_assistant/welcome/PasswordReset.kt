@@ -4,50 +4,58 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.Toast
 import com.eujoh.student_assistant.R
+import com.eujoh.student_assistant.showToast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_password_reset.*
+import kotlinx.android.synthetic.main.activity_register.*
 
-class PasswordReset : AppCompatActivity() {
+class PasswordReset : AppCompatActivity(), View.OnClickListener {
 
-    private var firebaseAuth: FirebaseAuth? =null
+    lateinit var mAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_password_reset)
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance()
 
-        reset_btn.setOnClickListener {
-            ResetPassword()
-        }
-        login_btn_reset.setOnClickListener {
-            var intent = Intent(Intent(this@PasswordReset,LogInActivity::class.java))
-            startActivity(intent)
-        }
-        signup_btn_reset.setOnClickListener{
-            var intent = Intent(Intent(this@PasswordReset,RegisterActivity::class.java))
-            startActivity(intent)
-        }
+        reset_btn.setOnClickListener(this)
+        reset_txt_login_link.setOnClickListener(this)
+        txt_link_reset.setOnClickListener(this)
     }
-    private fun ResetPassword(){
-        val email = reset_email_txt?.text.toString().trim()
+    private fun PasswordReset(){
+        val email = edt_username_reset?.text.toString().trim()
 
         if (TextUtils.isEmpty(email)){
-            Toast.makeText(applicationContext,"Please Enter Your Email", Toast.LENGTH_SHORT).show()
-        }else{
-            firebaseAuth?.sendPasswordResetEmail(email)?.addOnCompleteListener(object : OnCompleteListener<Void>{
+            showToast("Please Enter your Email")
+        } else{
+            mAuth?.sendPasswordResetEmail(email).addOnCompleteListener(object : OnCompleteListener<Void> {
                 override fun onComplete(task: Task<Void>) {
                     if (task.isSuccessful){
-                        Toast.makeText(applicationContext,"Please check your Email for Reset Password",Toast.LENGTH_SHORT).show()
+                        showToast("Check your Email for a Reset Password")
                     }else{
-                        val error = task.exception?.message
-                        Toast.makeText(applicationContext,"Error "+ error,Toast.LENGTH_SHORT).show()
+                        showToast("Something went wrong, please try again later")
                     }
                 }
             })
+        }
+    }
+
+    override fun onClick(view: View) {
+        when (view.id){
+            R.id.reset_btn ->{
+                PasswordReset()
+            }
+            R.id.reset_txt_login_link ->{
+                startActivity(Intent(this,LogInActivity::class.java))
+            }
+            R.id.txt_link_reset ->{
+                startActivity(Intent(this,RegisterActivity::class.java))
+            }
         }
     }
 }

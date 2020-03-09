@@ -7,11 +7,11 @@ import android.view.View
 import com.eujoh.student_assistant.NavActivity
 import com.eujoh.student_assistant.R
 import com.eujoh.student_assistant.models.User
+import com.eujoh.student_assistant.showToast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_register.*
-import java.util.jar.Attributes
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 

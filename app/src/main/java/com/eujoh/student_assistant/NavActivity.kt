@@ -79,7 +79,7 @@ class NavActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
 //                    .commit()
             }
             R.id.announcements -> {
-                this.startActivity(Intent(this,AnnouncementsActivity::class.java))
+                this.startActivity(Intent(this, AnnouncementsActivity::class.java))
                 return true
             }
             R.id.lost_found -> {

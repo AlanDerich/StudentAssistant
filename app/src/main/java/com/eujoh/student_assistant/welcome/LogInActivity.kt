@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.view.View
 import com.eujoh.student_assistant.NavActivity
 import com.eujoh.student_assistant.R
+import com.eujoh.student_assistant.showToast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_log_in.*
 import kotlinx.android.synthetic.main.activity_log_in.login_btn
 import kotlinx.android.synthetic.main.activity_log_in.txt_link
-import kotlinx.android.synthetic.main.activity_register.*
 
 class LogInActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -31,9 +31,8 @@ class LogInActivity : AppCompatActivity(), View.OnClickListener {
         }
         //set the onclick listener upon activity creation
         login_btn.setOnClickListener(this)
-        txt_link.setOnClickListener {
-            startActivity(Intent(this,RegisterActivity::class.java))
-        }
+        txt_link.setOnClickListener(this)
+        txt_password_link.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -53,6 +52,12 @@ class LogInActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     showToast("Please enter Email and Password")
                 }
+            }
+            R.id.txt_link ->{
+                startActivity(Intent(this,RegisterActivity::class.java))
+            }
+            R.id.txt_password_link ->{
+                startActivity(Intent(this,PasswordReset::class.java))
             }
         }
     }

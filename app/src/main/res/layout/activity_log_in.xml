@@ -31,7 +31,7 @@
         android:background="@drawable/round_edt_style"
         android:paddingLeft="20dp"
         android:paddingTop="7dp"
-        android:hint="username"
+        android:hint="Email"
         android:textColor="#000"/>
     <EditText
         android:id="@+id/edt_password"

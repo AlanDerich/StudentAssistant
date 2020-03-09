@@ -13,11 +13,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".my_profile.ProfileActivity"></activity>
+        <activity
+            android:name=".announcements.AnnouncementsActivity"
+            android:label="ANNOUNCEMENTS"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NavActivity" />
+        </activity>
+        <activity android:name=".my_profile.ProfileActivity" />
         <activity
             android:name=".welcome.LogInActivity"
             android:theme="@style/AppTheme.NOActionBar" />
-        <activity android:name=".welcome.PasswordReset" />
+        <activity
+            android:name=".welcome.PasswordReset"
+            android:theme="@style/AppTheme.NOActionBar" />
         <activity
             android:name=".welcome.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -66,15 +77,6 @@
             android:name=".my_profile.EditProfileActivity"
             android:label="MY PROFILE"
             android:launchMode="singleTop">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".NavActivity" />
-        </activity>
-        <activity
-            android:name=".announcements.AnnouncementsActivity"
-            android:label="ANNOUNCEMENTS"
-            android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NavActivity" />
